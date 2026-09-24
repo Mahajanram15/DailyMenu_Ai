@@ -1,0 +1,271 @@
+import { Vendor, MenuItem, Order } from '../types';
+
+export const INITIAL_VENDORS: Vendor[] = [
+  {
+    id: 'chai-chaat-koramangala',
+    name: 'Chai & Chaat Junction',
+    slug: 'chai-chaat-koramangala',
+    tagline: 'Fresh street food crafted with cold-pressed oils & heirloom spices',
+    address: '80 Feet Rd, 4th Block, Koramangala, Bengaluru, Karnataka 560034',
+    rating: 4.85,
+    totalReviews: 1420,
+    status: 'open',
+    cuisines: ['Street Food', 'Snacks', 'Beverages', 'North Indian'],
+    logo: '☕',
+    banner: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1200&q=80',
+    phone: '+91 98450 12345',
+    upiId: 'chaichaat@okaxis',
+    activeTokensCount: 7,
+    avgPrepTime: 6,
+  },
+  {
+    id: 'royal-biryani-indiranagar',
+    name: 'Royal Dum Biryani & Rolls',
+    slug: 'royal-biryani-indiranagar',
+    tagline: 'Slow-cooked artisanal firewood biryani & Kolkata paratha rolls',
+    address: '100 Feet Rd, HAL 2nd Stage, Indiranagar, Bengaluru, Karnataka 560038',
+    rating: 4.92,
+    totalReviews: 2890,
+    status: 'rush',
+    cuisines: ['Biryani', 'Rolls', 'Mughlai', 'Kebabs'],
+    logo: '🍲',
+    banner: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=1200&q=80',
+    phone: '+91 98765 43210',
+    upiId: 'royalbiryani@icici',
+    activeTokensCount: 14,
+    avgPrepTime: 12,
+  }
+];
+
+export const INITIAL_MENU_ITEMS: MenuItem[] = [
+  {
+    id: 'item-1',
+    name: 'Signature Adrak Elaichi Chai (Kulhad)',
+    nativeNames: {
+      hi: 'अदरक इलायची कुल्हड़ चाय',
+      ta: 'இஞ்சி ஏலக்காய் குல்ஹட் டீ',
+      te: 'అల్లం యాలకుల కుల్హడ్ టీ',
+      mr: 'आले वेलची कुल्हड चहा'
+    },
+    description: 'Slow-brewed Assam CTC milk tea infused with fresh crushed ginger and green cardamom, served in an eco-friendly clay pot.',
+    price: 35,
+    costPrice: 11,
+    category: 'Drinks',
+    isAvailable: true,
+    isChefSpecial: true,
+    prepTimeMin: 4,
+    dietary: 'veg',
+    spicyLevel: 1,
+    tags: ['Popular', 'Morning Ritual', 'Clay Pot'],
+    image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80',
+    calories: 110,
+  },
+  {
+    id: 'item-2',
+    name: 'Dahi Puri Royal Bomb (6 pcs)',
+    nativeNames: {
+      hi: 'शाही दही पूरी',
+      ta: 'ராயல் தஹி பூரி',
+      te: 'రాయల్ పెరుగు పూరి',
+      mr: 'शाही दही पुरी'
+    },
+    description: 'Crispy semolina puris filled with spiced potatoes, sprouts, sweetened chilled yogurt, tamarind date chutney & pomegranate arils.',
+    price: 90,
+    costPrice: 28,
+    category: 'Snacks',
+    isAvailable: true,
+    isChefSpecial: true,
+    prepTimeMin: 5,
+    dietary: 'veg',
+    spicyLevel: 2,
+    tags: ['Popular', 'Instant Hit'],
+    image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80',
+    calories: 240,
+  },
+  {
+    id: 'item-3',
+    name: 'Amritsari Paneer Tikka Slider (2 pcs)',
+    nativeNames: {
+      hi: 'अमृतसरी पनीर टिक्का स्लाइडर',
+      ta: 'அமிர்தசரஸ் பன்னீர் டிக்கா ஸ்லைடர்',
+      te: 'అమృతసర్ పనీర్ టిక్కా స్లైడర్',
+      mr: 'अमृतसरी पनीर टिक्का स्लायडर'
+    },
+    description: 'Tandoor-charred malai paneer cubes tossed in mint chutney with lachha onions tucked into butter-toasted mini pavs.',
+    price: 130,
+    costPrice: 48,
+    category: 'Breakfast',
+    isAvailable: true,
+    isChefSpecial: true,
+    prepTimeMin: 8,
+    dietary: 'veg',
+    spicyLevel: 2,
+    tags: ['Popular', 'Chef Pick'],
+    image: 'https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=600&q=80',
+    calories: 360,
+  },
+  {
+    id: 'item-4',
+    name: 'Crispy Cheese Corn Samosa (3 pcs)',
+    nativeNames: {
+      hi: 'चीज़ कॉर्न समोसा',
+      ta: 'சீஸ் கார்ன் சமோசா',
+      te: 'చీజ్ కార్న్ సమోసా',
+      mr: 'चीज कॉर्न समोसा'
+    },
+    description: 'Golden triangular pastry pockets bursting with gooey mozzarella, sweet corn, green chilies, and secret seasoning.',
+    price: 80,
+    costPrice: 24,
+    category: 'Snacks',
+    isAvailable: true,
+    isChefSpecial: false,
+    prepTimeMin: 6,
+    dietary: 'veg',
+    spicyLevel: 1,
+    tags: ['Cheesy', 'Evening Snack'],
+    image: 'https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=600&q=80',
+    calories: 310,
+  },
+  {
+    id: 'item-5',
+    name: 'Kolkata Egg Chicken Kathi Roll',
+    nativeNames: {
+      hi: 'कोलकाता एग चिकन काठी रोल',
+      ta: 'கொல்கத்தா முட்டை சிக்கன் காத்தி ரோல்',
+      te: 'కోల్‌కతా ఎగ్ చికెన్ కాథీ రోల్',
+      mr: 'कोलकाता अंड चिकन काठी रोल'
+    },
+    description: 'Flaky paratha layered with an egg, stuffed with succulent spiced chicken chunks, crisp cucumber, lime juice, and green chilies.',
+    price: 160,
+    costPrice: 58,
+    category: 'Main Course',
+    isAvailable: true,
+    isChefSpecial: true,
+    prepTimeMin: 9,
+    dietary: 'non-veg',
+    spicyLevel: 3,
+    tags: ['Popular', 'Must Try'],
+    image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=600&q=80',
+    calories: 480,
+  },
+  {
+    id: 'item-6',
+    name: 'Kesar Badam Kulfi Falooda',
+    nativeNames: {
+      hi: 'केसर बादाम कुल्फी फलूदा',
+      ta: 'கேசர் பாதாம் குல்பி பலூடா',
+      te: 'కేసర్ బాదం కుల్ఫీ ఫలూదా',
+      mr: 'केशर बदाम कुल्फी फालुदा'
+    },
+    description: 'Traditional slow-reduced saffron almond kulfi layered with rose vermicelli, soaked sabja basil seeds, and crushed pistachios.',
+    price: 110,
+    costPrice: 38,
+    category: 'Drinks',
+    isAvailable: true,
+    isChefSpecial: false,
+    prepTimeMin: 3,
+    dietary: 'veg',
+    spicyLevel: 1,
+    tags: ['Refreshing', 'Dessert'],
+    image: 'https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=600&q=80',
+    calories: 290,
+  }
+];
+
+export const INITIAL_ORDERS: Order[] = [
+  {
+    id: 'ORD-8821',
+    tokenNumber: 21,
+    tokenCode: 'A21',
+    customerName: 'Aarav Sharma',
+    customerPhone: '+91 98451 90212',
+    items: [
+      { item: INITIAL_MENU_ITEMS[0], quantity: 2, customization: 'Less sugar, extra adrak' },
+      { item: INITIAL_MENU_ITEMS[3], quantity: 1 }
+    ],
+    status: 'ready',
+    totalAmount: 150,
+    paymentMethod: 'UPI',
+    paymentStatus: 'paid',
+    createdAt: '4 mins ago',
+    estimatedMinutes: 0,
+    vendorId: 'chai-chaat-koramangala',
+    tableOrCounter: 'Counter Pickup'
+  },
+  {
+    id: 'ORD-8822',
+    tokenNumber: 22,
+    tokenCode: 'A22',
+    customerName: 'Priya Iyer',
+    customerPhone: '+91 97412 88319',
+    items: [
+      { item: INITIAL_MENU_ITEMS[1], quantity: 2, customization: 'Extra sweet chutney' },
+      { item: INITIAL_MENU_ITEMS[0], quantity: 1 }
+    ],
+    status: 'preparing',
+    totalAmount: 215,
+    paymentMethod: 'UPI',
+    paymentStatus: 'paid',
+    createdAt: '6 mins ago',
+    estimatedMinutes: 3,
+    vendorId: 'chai-chaat-koramangala',
+    tableOrCounter: 'Standing Table 4'
+  },
+  {
+    id: 'ORD-8823',
+    tokenNumber: 23,
+    tokenCode: 'A23',
+    customerName: 'Rohan Mehra',
+    customerPhone: '+91 99160 44211',
+    items: [
+      { item: INITIAL_MENU_ITEMS[2], quantity: 2 },
+      { item: INITIAL_MENU_ITEMS[4], quantity: 1 }
+    ],
+    status: 'preparing',
+    totalAmount: 420,
+    paymentMethod: 'Cash',
+    paymentStatus: 'paid',
+    createdAt: '9 mins ago',
+    estimatedMinutes: 5,
+    vendorId: 'chai-chaat-koramangala',
+    tableOrCounter: 'Takeaway Box'
+  },
+  {
+    id: 'ORD-8824',
+    tokenNumber: 24,
+    tokenCode: 'A24',
+    customerName: 'Neha Gupta',
+    customerPhone: '+91 98200 11993',
+    items: [
+      { item: INITIAL_MENU_ITEMS[1], quantity: 1 },
+      { item: INITIAL_MENU_ITEMS[5], quantity: 1 }
+    ],
+    status: 'pending',
+    totalAmount: 200,
+    paymentMethod: 'UPI',
+    paymentStatus: 'paid',
+    createdAt: '1 min ago',
+    estimatedMinutes: 8,
+    vendorId: 'chai-chaat-koramangala',
+    tableOrCounter: 'Counter Pickup'
+  },
+  {
+    id: 'ORD-8819',
+    tokenNumber: 19,
+    tokenCode: 'A19',
+    customerName: 'Vikram Sundaram',
+    customerPhone: '+91 98860 33412',
+    items: [
+      { item: INITIAL_MENU_ITEMS[0], quantity: 3 },
+      { item: INITIAL_MENU_ITEMS[3], quantity: 2 }
+    ],
+    status: 'completed',
+    totalAmount: 265,
+    paymentMethod: 'UPI',
+    paymentStatus: 'paid',
+    createdAt: '18 mins ago',
+    estimatedMinutes: 0,
+    vendorId: 'chai-chaat-koramangala',
+    tableOrCounter: 'Counter Pickup'
+  }
+];
